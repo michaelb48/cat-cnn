@@ -3,9 +3,9 @@ import torch
 import uuid
 
 
-def save_model(model, early_stoppage ,epoch, optimizer, criterion):
+def save_model(config, model,epoch, optimizer, criterion):
     torch.save({
-                'early_stoppage': early_stoppage,
+                'config': config,
                 'epoch': epoch,
                 'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
