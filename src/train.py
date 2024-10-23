@@ -121,7 +121,7 @@ def calculate_accuracy(pred, target, k=1):
     top_k_preds = torch.topk(pred, k=k, dim=1).indices  # Shape: (batch_size, k)
     correct = top_k_preds.eq(target.view(-1,1).expand_as(top_k_preds))
     correct_count = correct.sum().item()
-    return correct_count
+    return correct_count/config.get("batch_size")
 
 
 # Validation loop
