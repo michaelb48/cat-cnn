@@ -21,7 +21,6 @@ class CatCnn(nn.Module):
 
 
     def forward(self, x):
-        print(x.shape)
         logits = self.hidden_unit_1(x)
         logits = self.hidden_unit_2(logits)
         logits = self.hidden_unit_3(logits)
